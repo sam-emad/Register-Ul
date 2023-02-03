@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/screens/sign_in_page.dart';
-import 'package:login_app/static/static.dart';
 import '../custom/custom_divider.dart';
 import '../custom/custom_row_text.dart';
 import '../custom/custom_get-started_page.dart';
@@ -12,13 +10,13 @@ import '../custom/custom_container_ltem.dart';
 class LetsSignin extends StatelessWidget {
   String id = 'LetsSignin';
   String id2 = 'SignInPage';
+  String id3 = 'RegisterPage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 1, left: 20, right: 20),
         child: ListView(
-          
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +54,12 @@ class LetsSignin extends StatelessWidget {
                 text: 'Sign in with passwerd',
                 width: MediaQuery.of(context).size.width),
             const SizedBox(height: 15),
-            const CustomRowtext(text: ' Sign in')
+            CustomRowtext(
+              text: ' Register',
+              onTap: () {
+                Navigator.pushNamed(context, id3 = 'RegisterPage');
+              },
+            )
           ],
         ),
       ),

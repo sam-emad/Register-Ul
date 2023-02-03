@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../static/static.dart';
 
 class CustomRowtext extends StatelessWidget {
-  const CustomRowtext({super.key, required this.text});
+  CustomRowtext({super.key, required this.text, this.onTap});
   final String text;
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,9 +17,12 @@ class CustomRowtext extends StatelessWidget {
             color: Colors.black.withOpacity(0.4),
           ),
         ),
-        Text(
-          text,
-          style: const TextStyle(color: kPrimerycolor),
+        GestureDetector(
+          onTap: onTap,
+          child: Text(
+            text,
+            style: const TextStyle(color: kPrimerycolor),
+          ),
         ),
       ],
     );
